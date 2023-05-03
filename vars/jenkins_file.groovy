@@ -27,7 +27,7 @@ pipeline{
 
      stage('notifier'){
        steps{
-         myObject.notifier()
+         myObject.Notifier()
        }
      }
     
@@ -44,14 +44,14 @@ pipeline{
        
         
         
-        myObject.git_checkOut(git_url)
+        myObject.Git_checkOut(git_url)
         
         
        }
   }
    stage('Gaining Access for deployment') {
     steps{
-     myObject.gaining_access_for_ecr()
+     myObject.Gaining_access_for_ecr()
 
     }
   }
@@ -71,13 +71,13 @@ stage('Push Image to ECR'){
    
 stage('Image cleanup'){
      steps{
-       myObject.image_cleanup(docker_repo,image_name,tag)}
+       myObject.Image_cleanup(docker_repo,image_name,tag)}
       
   }
 
   stage('helm update'){
     step{
-      myObject.helm_update(devops_git_url,)
+      myObject.Helm_update(devops_git_url,)
     }
       
   }
