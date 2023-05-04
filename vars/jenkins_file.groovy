@@ -46,7 +46,7 @@ pipeline{
       // Get some code from a GitHub repository
        steps{
        
-        
+         sh 'echo ${region}'
          sh 'echo $git_url'
          sh 'echo $credential_git'
          script{
