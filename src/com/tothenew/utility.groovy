@@ -53,16 +53,16 @@ def Build_Docker_Image(String docker_repo){
 def Push_Image_to_ECR(String docker_repo,String docker_registry){
 sh """
 docker tag $docker_repo:$tag $docker_registry:$tag
-sudo docker push $docker_registry:$tag
+sudo docker push $docker_repo:$tag
 
 """
 }
 //IMAGE CLEANUP
 def Image_cleanup(String docker_repo,String tag){
-  
-sh 'echo removing $docker_repo and $docker_repo:$tag'
-  sh 'docker rmi $docker_repo $docker_repo:$tag'
-
+ sh """ 
+  echo removing $docker_repo and $docker_repo:$tag'
+   docker rmi $docker_repo $docker_repo:$tag'
+ sh"""
 }
 
 //update helm
