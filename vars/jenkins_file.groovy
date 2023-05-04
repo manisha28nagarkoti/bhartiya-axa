@@ -64,14 +64,14 @@ pipeline{
   stage('ECR Login'){
       steps{
       script{
-        myObject.Ecr_login(region,docker_registry)
+        myObject.Ecr_login("${region}","${docker_registry}")
         }
        } 
   }
 stage('Build Docker Image') {
       steps{
       script{
-        myObject.Build_Docker_Image(docker_repo)
+        myObject.Build_Docker_Image("${docker_repo}")
         }
         }
   }
@@ -79,7 +79,7 @@ stage('Build Docker Image') {
 stage('Push Image to ECR'){
       steps{
       script{
-        myObject.Push_Image_to_ECR(docker_repo,docker_registry)
+        myObject.Push_Image_to_ECR("${docker_repo}","${docker_registry}")
         }
         }
   }
@@ -94,7 +94,7 @@ stage('Image cleanup'){
 
 //   stage('helm update'){
 //     step{
-//       myObject.Helm_update(devops_git_url,service_name)
+//       myObject.Helm_update("${devops_git_url}","${service_name}")
 //     }
       
 //   }
