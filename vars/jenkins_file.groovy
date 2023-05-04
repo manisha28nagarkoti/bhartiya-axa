@@ -1,6 +1,6 @@
 import com.tothenew.utility
 //object creation
-def myObject = new utility()
+ myObject = new utility()
 
 
 pipeline{
@@ -38,20 +38,20 @@ pipeline{
          sh 'rm -rf .git'
        }
      }
-     stage('Git CheckOut') { 
+     stage('Git Clone') { 
       // Get some code from a GitHub repository
        steps{
        
         
         
-        myObject.Git_checkOut(git_url)
+        myObject.Git_clone(git_url)
         
         
        }
   }
 //    stage('Gaining Access for deployment') {
 //     steps{
-//      myObject.Gaining_access_for_ecr()
+//      myObject.Gaining_access()
 
 //     }
 //   }
