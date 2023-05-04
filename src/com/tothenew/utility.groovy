@@ -51,11 +51,11 @@ def Build_Docker_Image(String docker_repo){
 
 //PUSH IMAGE TO ECR.....
 def Push_Image_to_ECR(String docker_repo,String docker_registry){
-sh '''
+sh """
 docker tag $docker_repo:$tag $docker_registry:$tag
-docker push $docker_registry:$tag
+sudo docker push $docker_registry:$tag
 
-'''
+"""
 }
 //IMAGE CLEANUP
 def Image_cleanup(String docker_repo,String tag){
