@@ -47,7 +47,7 @@ pipeline{
        steps{
        
         
-         sh 'echo $git-url'
+         sh 'echo $git_url'
          sh 'echo $credential_git'
          script{
          myObject.Git_clone(git_url,credential_git)
