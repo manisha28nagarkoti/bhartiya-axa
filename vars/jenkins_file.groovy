@@ -48,7 +48,7 @@ pipeline{
        
         
         script{
-        myObject.Git_clone(git_url)
+        myObject.Git_clone(git_url,credential_git)
         
         }
        }
