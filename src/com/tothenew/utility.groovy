@@ -36,7 +36,7 @@ withCredentials([sshUserPrivateKey(credentialsId: "${credential_git}", keyFileVa
 //ECR LOGIN.......
 def Ecr_login(String region, String docker_registry){
  sh '''
-   aws ecr get-login-password --region $region| docker login --username AWS --password-stdin $docker_registry
+   aws ecr get-login-password --region "${region}"| docker login --username AWS --password-stdin "${docker_registry}"
 
  '''
 }
