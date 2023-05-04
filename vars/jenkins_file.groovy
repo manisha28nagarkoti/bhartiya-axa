@@ -1,26 +1,27 @@
 import com.tothenew.utility
 //object creation
- myObject = new utility()
 
-def call(region){
+
+def call(String git_url,String docker_repo,String credential_git,region){
 myObject = new utility()
+
 pipeline{
     agent{
         label 'slave2'
     }
    
-    environment{
-      git_url="git@github.com:manisha28nagarkoti/${service-name}.git"
-      docker_registry = "${docker-registry}"
+    //environment{
+      //git_url="git@github.com:manisha28nagarkoti/${service-name}.git"
+      /docker_registry = "${docker-registry}"
       //devops_git_url='git@gitlab.intelligrape.net:bharti-axa/devops.git'
 
-      docker_repo= "${docker_registry}/${service-name}"
+      //docker_repo= "${docker_registry}/${service-name}"
       
-      credential_git='jenkin-slave-git'
-      env.APPLICATION="${JOB_BASE_NAME}"
+      //credential_git='jenkin-slave-git'
+      //env.APPLICATION="${JOB_BASE_NAME}"
       
       
-    }
+    //}
     
     
    
