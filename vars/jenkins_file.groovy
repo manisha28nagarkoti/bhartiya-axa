@@ -49,7 +49,7 @@ pipeline{
         
         script{
        echo  $credential_git
-        myObject.Git_clone(git_url,credential_git)
+        myObject.Git_clone(git_url,$credential_git)
         
         }
        }
