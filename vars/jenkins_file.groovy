@@ -2,7 +2,7 @@ import com.tothenew.utility
 //object creation
 
 //String git_url,String docker_repo,String credential_git,
-def call(String credential_git,String region){
+def call(String region){
 myObject = new utility()
 
 pipeline{
@@ -48,8 +48,9 @@ pipeline{
        
         
          script{
-         echo "${region}"
-         myObject.Git_clone("${git_url}","${credential_git}")
+         //echo "${region}"
+          git branch: "$branch_name", url: git_url 
+         //myObject.Git_clone("${git_url}","${credential_git}")
         }
         
        }
