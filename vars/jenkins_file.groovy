@@ -49,8 +49,9 @@ pipeline{
         
          sh 'echo $git-url'
          sh 'echo $credential_git'
+         script{
          myObject.Git_clone(git_url,credential_git)
-        
+        }
         
        }
     }
