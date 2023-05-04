@@ -43,10 +43,10 @@ def Ecr_login(String region,String docker_registry){
 }
 //BUILD IMAGE
 def Build_Docker_Image(String docker_repo){
- sh'''
+ sh """
  sudo docker build -t $docker_repo .
  
- '''
+ """
 }
 
 //PUSH IMAGE TO ECR.....
