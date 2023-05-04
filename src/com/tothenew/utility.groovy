@@ -14,7 +14,7 @@ package com.tothenew
 //      }
 //git clone
 def Git_clone(String git_url,String credential_git){ 
-withCredentials([sshUserPrivateKey(credentialsId: $credential_git, keyFileVariable: 'SSH_KEY')]) {
+withCredentials([sshUserPrivateKey(credentialsId: '$credential_git' , keyFileVariable: 'SSH_KEY')]) {
                     sh """
                         eval `ssh-agent`
                         ssh-add $SSH_KEY
