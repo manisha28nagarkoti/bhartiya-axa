@@ -29,7 +29,9 @@ pipeline{
 
 //      stage('notifier'){
 //        steps{
+            script{
 //          myObject.Notifier()
+            }
 //        }
 //      }
     
@@ -45,35 +47,48 @@ pipeline{
        steps{
        
         
-        
+        script{
         myObject.Git_clone(git_url)
         
-        
+        }
        }
-  }
+    }
 //    stage('Gaining Access for deployment') {
 //     steps{
+       script{
 //      myObject.Gaining_access()
+       }
 
 //     }
 //   }
   stage('ECR Login'){
       steps{
-        myObject.Ecr_login(region,docker_registry)}
+      script{
+        myObject.Ecr_login(region,docker_registry)
+        }
+       } 
   }
 stage('Build Docker Image') {
       steps{
-        myObject.Build_Docker_Image(docker_repo)}
+      script{
+        myObject.Build_Docker_Image(docker_repo)
+        }
+        }
   }
   
 stage('Push Image to ECR'){
       steps{
-        myObject.Push_Image_to_ECR(docker_repo,docker_registry)}
+      script{
+        myObject.Push_Image_to_ECR(docker_repo,docker_registry)
+        }
+        }
   }
    
 stage('Image cleanup'){
      steps{
+     script{
        myObject.Image_cleanup()}
+       }
       
   }
 
@@ -87,6 +102,6 @@ stage('Image cleanup'){
 }
 
 }
-}
+
 
 
