@@ -29,9 +29,9 @@ pipeline{
 
 //      stage('notifier'){
 //        steps{
-            script{
+ //           script{
 //          myObject.Notifier()
-            }
+ //           }
 //        }
 //      }
     
@@ -55,9 +55,9 @@ pipeline{
     }
 //    stage('Gaining Access for deployment') {
 //     steps{
-       script{
+       //script{
 //      myObject.Gaining_access()
-       }
+       //}
 
 //     }
 //   }
