@@ -2,7 +2,7 @@ import com.tothenew.utility
 //object creation
 
 //String git_url,String docker_repo,String credential_git,
-def call(String region){
+def call(String credential_git,String region){
 myObject = new utility()
 
 pipeline{
