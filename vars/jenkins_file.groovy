@@ -11,7 +11,7 @@ pipeline{
     }
    
     environment{
-      git_url='git@github.com:manisha28nagarkoti/$service-name.git'
+      git_url='git@github.com:manisha28nagarkoti/${params.service-name}.git'
       docker_registry = '${docker-registry}'
       //devops_git_url='git@gitlab.intelligrape.net:bharti-axa/devops.git'
 //docker_repo='"${param.docker_url}"/"${param.service-name}"-service"' 
