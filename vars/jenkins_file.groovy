@@ -82,6 +82,7 @@ stage('Build Docker Image') {
 stage('Push Image to ECR'){
       steps{
       script{
+        myObject.Ecr_login("${region}","${docker_registry}")
         myObject.Push_Image_to_ECR("${docker_repo}","${docker_registry}")
         }
         }
