@@ -12,7 +12,7 @@ pipeline{
    
     environment{
       git_url='git@github.com:manisha28nagarkoti/${service_name}.git'
-      docker_registry = '${docker-registry}'
+      docker_registry = ${docker-registry}
       //devops_git_url='git@gitlab.intelligrape.net:bharti-axa/devops.git'
 //docker_repo='"${param.docker_url}"/"${param.service-name}"-service"' 
       docker_repo= '${params.docker_registry}"/"${param.service-name}'
@@ -64,7 +64,7 @@ pipeline{
   stage('ECR Login'){
       steps{
       script{
-        myObject.Ecr_login("${region}","${docker_registry}")
+        myObject.Ecr_login("${region}",${docker_registry})
         }
        } 
   }
