@@ -19,7 +19,7 @@ withCredentials([sshUserPrivateKey(credentialsId: "${credential_git}", keyFileVa
                         eval `ssh-agent`
                         ssh-add $SSH_KEY
                         ssh-keyscan github.com >> ~/.ssh/known_hosts
-                        git clone $git_url .
+                        git clone "${git_url}" .
                     """
                 }
   
