@@ -2,7 +2,8 @@ import com.tothenew.utility
 //object creation
  myObject = new utility()
 
-
+def call(region){
+myObject = new utility()
 pipeline{
     agent{
         label 'slave2'
@@ -10,7 +11,7 @@ pipeline{
    
     environment{
       git_url="git@github.com:manisha28nagarkoti/${service-name}.git"
-      docker_registry = "337764066236.dkr.ecr.ap-south-1.amazonaws.com"
+      docker_registry = "${docker-registry}"
       //devops_git_url='git@gitlab.intelligrape.net:bharti-axa/devops.git'
 
       docker_repo= "${docker_registry}/${service-name}"
@@ -82,6 +83,8 @@ stage('Image cleanup'){
       
 //   }
  }
+}
+
 }
 
 
