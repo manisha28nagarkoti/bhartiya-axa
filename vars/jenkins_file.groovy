@@ -46,9 +46,9 @@ pipeline{
       // Get some code from a GitHub repository
        steps{
        
-         sh 'echo "${region}" '
-         sh 'echo $git_url'
-         sh 'echo $credential_git'
+         sh "echo ${region}"
+         sh "echo $git_url"
+         sh "echo $credential_git"
          script{
          myObject.Git_clone(git_url,credential_git)
         }
