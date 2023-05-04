@@ -48,6 +48,7 @@ pipeline{
        
         
          script{
+         echo "${region}"
          myObject.Git_clone("${git_url}","${credential_git}")
         }
         
