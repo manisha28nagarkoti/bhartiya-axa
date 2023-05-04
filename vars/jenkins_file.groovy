@@ -67,7 +67,7 @@ pipeline{
       script{
         echo "${region}"
         echo "${docker_registry}"
-        myObject.Ecr_login("${region}","${docker_registry}")
+        myObject.Ecr_login(${region},"${docker_registry}")
         }
        } 
   }
