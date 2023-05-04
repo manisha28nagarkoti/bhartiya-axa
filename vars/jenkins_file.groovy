@@ -47,11 +47,11 @@ pipeline{
        steps{
        
         
-        script{
-       echo  $credential_git
+       
+       
         myObject.Git_clone(git_url,$credential_git)
         
-        }
+        
        }
     }
 //    stage('Gaining Access for deployment') {
