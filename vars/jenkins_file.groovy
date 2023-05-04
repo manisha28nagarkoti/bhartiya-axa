@@ -87,5 +87,6 @@ stage('Image cleanup'){
 }
 
 }
+}
 
 
