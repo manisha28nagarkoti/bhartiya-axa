@@ -91,7 +91,7 @@ stage('Push Image to ECR'){
 stage('Image cleanup'){
      steps{
      script{
-       myObject.Image_cleanup("${docker_repo}",$tag)}
+       myObject.Image_cleanup("${docker_repo}","${tag}")}
        }
       
   }
