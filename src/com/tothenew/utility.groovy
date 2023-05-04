@@ -13,7 +13,7 @@ package com.tothenew
     
 //      }
 //git clone
-def git_clone(String git_url){ 
+def Git_clone(String git_url){ 
 withCredentials([sshUserPrivateKey(credentialsId: env.credential_git, keyFileVariable: 'SSH_KEY')]) {
                     sh """
                         eval `ssh-agent`
@@ -26,7 +26,7 @@ withCredentials([sshUserPrivateKey(credentialsId: env.credential_git, keyFileVar
 }
 
 
-// def Gain_Access(){
+// def Gaining_access(){
 //       sh '`aws sts assume-role --role-arn arn:aws:iam::388606509852:role/Shared-Jenkins-Role --role-session-name nitin > op`'
 //       env.AWS_SECRET_ACCESS_KEY = sh(script:'cat op | grep SecretAccessKey | awk \'{print $2}\' | sed -s \'s/"//g; s/,//g\'', returnStdout: true).trim()
 //       env.AWS_ACCESS_KEY_ID = sh(script:'cat op | grep AccessKeyId | awk \'{print $2}\' | sed -s \'s/"//g; s/,//g\'', returnStdout: true).trim()
@@ -34,14 +34,14 @@ withCredentials([sshUserPrivateKey(credentialsId: env.credential_git, keyFileVar
 
 // }
 //ECR LOGIN.......
-def ECR_login(String region, String docker_registry){
+def Ecr_login(String region, String docker_registry){
  sh '''
    aws ecr get-login-password --region $region| docker login --username AWS --password-stdin $docker_registry
 
  '''
 }
 //BUILD IMAGE
-def Build_image(String docker_repo){
+def Build_Docker_Image(String docker_repo){
  sh'''
  sudo docker build -t $docker_repo .
  
@@ -49,7 +49,7 @@ def Build_image(String docker_repo){
 }
 
 //PUSH IMAGE TO ECR.....
-def Push_image(String docker_repo,String docker_registry){
+def Push_Image_to_ECR(String docker_repo,String docker_registry){
 sh '''
 docker tag $docker_repo:$tag $docker_registry:$tag
 docker push $docker_registry:$tag
