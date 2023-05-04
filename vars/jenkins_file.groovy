@@ -11,7 +11,7 @@ pipeline{
     }
    
     environment{
-      git_url='git@github.com:manisha28nagarkoti/"${service-name}".git'
+      git_url='git@github.com:manisha28nagarkoti/${service-name}.git'
       docker_registry = '${docker-registry}'
       //devops_git_url='git@gitlab.intelligrape.net:bharti-axa/devops.git'
 //docker_repo='"${param.docker_url}"/"${param.service-name}"-service"' 
@@ -46,9 +46,7 @@ pipeline{
       // Get some code from a GitHub repository
        steps{
        
-         sh "echo ${region}"
-         sh "echo ${git_url}"
-         sh "echo ${credential_git}"
+        
          script{
          myObject.Git_clone("${git_url}","${credential_git}")
         }
