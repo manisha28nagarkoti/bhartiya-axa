@@ -15,7 +15,7 @@ pipeline{
       docker_registry = "${docker-registry}"
       //devops_git_url='git@gitlab.intelligrape.net:bharti-axa/devops.git'
 
-      docker_repo= "${docker_registry}+'/'+${service-name}"
+      docker_repo= ${param.docker_registry}+"/"+${param.service-name}
       
       //credential_git='jenkin-slave-git'
       //env.APPLICATION="${JOB_BASE_NAME}"
