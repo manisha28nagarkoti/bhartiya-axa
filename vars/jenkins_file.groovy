@@ -49,7 +49,7 @@ pipeline{
         
          script{
          //echo "${region}"
-          git branch: "${branch_name}", url: git_url 
+          git branch: "${branch}", url: git_url 
          //myObject.Git_clone("${git_url}","${credential_git}")
         }
         
