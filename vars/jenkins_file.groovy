@@ -47,10 +47,10 @@ pipeline{
        steps{
        
          sh "echo ${region}"
-         sh "echo $git_url"
-         sh "echo $credential_git"
+         sh "echo ${git_url}"
+         sh "echo ${credential_git}"
          script{
-         myObject.Git_clone(git_url,credential_git)
+         myObject.Git_clone("${git_url}","${credential_git}")
         }
         
        }
