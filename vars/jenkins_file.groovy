@@ -41,7 +41,7 @@ pipeline{
       steps{
          sh 'rm -rf *'
          sh 'rm -rf .git'
-          sh 'echo ${build_name}'
+          sh 'echo build_name'
        }
      }
      stage('Git Clone') { 
