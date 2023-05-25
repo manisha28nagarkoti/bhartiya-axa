@@ -16,6 +16,7 @@ pipeline{
       //devops_git_url='git@gitlab.intelligrape.net:bharti-axa/devops.git'
 //docker_repo='"${param.docker_url}"/"${param.service-name}"-service"' 
       docker_repo=  "${docker_registry}"+"/"+"${service_name}"
+        build_name = service_name.toLowerCase()
       
       //credential_git='jenkin-slave-git'
       //env.APPLICATION="${JOB_BASE_NAME}"
@@ -84,7 +85,7 @@ stage('Push Image to ECR'){
       steps{
       script{
        
-        myObject.Push_Image_to_ECR("${docker_repo}","${docker_registry}")
+          myObject.Push_Image_to_ECR("${docker_repo}","${docker_registry}","${build_name}")
         }
         }
   }
