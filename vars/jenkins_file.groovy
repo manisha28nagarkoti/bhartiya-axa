@@ -6,9 +6,9 @@ def call(String region){
 myObject = new utility()
 
 pipeline{
-    agent{
-        label 'slave2'
-    }
+    agent any
+        
+    
    
     environment{
       git_url='git@github.com:manisha28nagarkoti/${service_name}.git'
