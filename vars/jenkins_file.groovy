@@ -15,8 +15,8 @@ pipeline{
       docker_registry = "${docker_registry}"
       //devops_git_url='git@gitlab.intelligrape.net:bharti-axa/devops.git'
 //docker_repo='"${param.docker_url}"/"${param.service-name}"-service"' 
-      docker_repo=  "${docker_registry}"+"/"+"${service_name}"
-        build_name = service_name.toLowerCase()
+       docker_repo=  "${docker_registry}"+"/"+"${service_name}"
+        build_name = "${service_name}".toLowerCase()
       
       //credential_git='jenkin-slave-git'
       //env.APPLICATION="${JOB_BASE_NAME}"
@@ -41,6 +41,7 @@ pipeline{
       steps{
          sh 'rm -rf *'
          sh 'rm -rf .git'
+          sh 'echo ${build_name}'
        }
      }
      stage('Git Clone') { 
